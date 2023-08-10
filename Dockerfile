@@ -106,10 +106,10 @@ RUN go install github.com/svent/sift@${SIFT_VERSION}
 
 ### truffle hog
 
-ENV TRUFFLEHOG_VERSION 3.29.1
+ENV TRUFFLEHOG_VERSION 3.47.0
 ENV TRUFFLEHOG_TARBALL trufflehog_${TRUFFLEHOG_VERSION}_linux_amd64.tar.gz
 ENV TRUFFLEHOG_DOWNLOAD_URL https://github.com/trufflesecurity/trufflehog/releases/download/v${TRUFFLEHOG_VERSION}/${TRUFFLEHOG_TARBALL}
-ENV TRUFFLEHOG_DOWNLOAD_SHA 7baf586edb3fda4954366afa121290a40f1cc60bef48d1deeff40a5415cdb6e9
+ENV TRUFFLEHOG_DOWNLOAD_SHA 24a020f4085b70ea851f23e0ac70442619709a3e485811a76a736cb2416a7b4c
 
 RUN mkdir /root/trufflehog_files
 RUN curl -fsSL "$TRUFFLEHOG_DOWNLOAD_URL" -o trufflehog.tar.gz \
@@ -119,7 +119,7 @@ RUN curl -fsSL "$TRUFFLEHOG_DOWNLOAD_URL" -o trufflehog.tar.gz \
 
 ### semgrep
 # https://semgrep.dev
-ENV SEMGREP_VERSION 1.15.0
+ENV SEMGREP_VERSION 1.35.0
 
 RUN pip3 install --user --no-cache-dir semgrep==${SEMGREP_VERSION}
 
